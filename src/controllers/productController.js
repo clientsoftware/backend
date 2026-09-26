@@ -31,7 +31,11 @@ export const listProducts = asyncHandler(async (req, res) => {
   }
   if (req.query.search || req.query.q) {
     const q = req.query.search || req.query.q;
-    filter.$or = [{ name: new RegExp(q, 'i') }, { category: new RegExp(q, 'i') }];
+    filter.$or = [
+      { name: new RegExp(q, 'i') },
+      { category: new RegExp(q, 'i') },
+      { barcode: new RegExp(q, 'i') },
+    ];
   }
 
   const products = await Product.find(filter).sort({ name: 1 });
@@ -53,6 +57,7 @@ export const createProduct = asyncHandler(async (req, res) => {
 
   const product = await Product.create({
     name: req.body.name,
+    barcode: req.body.barcode?.trim() || '',
     category: req.body.category,
     primaryUnit: req.body.primaryUnit || 'Kg',
     secondaryUnit: req.body.secondaryUnit || 'Pieces',
@@ -73,6 +78,7 @@ export const updateProduct = asyncHandler(async (req, res) => {
 
   const fields = [
     'name',
+    'barcode',
     'category',
     'primaryUnit',
     'secondaryUnit',

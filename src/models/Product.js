@@ -3,6 +3,7 @@ import mongoose from 'mongoose';
 const productSchema = new mongoose.Schema(
   {
     name: { type: String, required: true, trim: true },
+    barcode: { type: String, trim: true, default: '' },
     category: { type: String, required: true, trim: true },
     primaryUnit: { type: String, required: true, default: 'Kg' },
     secondaryUnit: { type: String, required: true, default: 'Pieces' },
