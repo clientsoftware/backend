@@ -23,6 +23,10 @@ app.use(express.json({ limit: '2mb' }));
 app.use(morgan('dev'));
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
+app.get('/', (_req, res) => {
+  res.json({ success: true, data: { service: 'CopperMart API' }, message: 'CopperMart Backend is running' });
+});
+
 app.get('/api/health', (_req, res) => {
   res.json({ success: true, data: { service: 'CopperMart API' }, message: 'OK' });
 });
