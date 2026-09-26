@@ -24,11 +24,11 @@ app.use(morgan('dev'));
 app.use('/uploads', express.static(path.join(__dirname, '../uploads')));
 
 app.get('/', (_req, res) => {
-  res.json({ success: true, data: { service: 'CopperMart API' }, message: 'CopperMart Backend is running' });
+  res.json({ success: true, data: { service: 'Electric Shop API' }, message: 'CopperMart Backend is running' });
 });
 
 app.get('/api/health', (_req, res) => {
-  res.json({ success: true, data: { service: 'CopperMart API' }, message: 'OK' });
+  res.json({ success: true, data: { service: 'Electric Shop API' }, message: 'OK' });
 });
 
 app.use('/api', apiRoutes);
@@ -40,7 +40,7 @@ async function start() {
   await connectDB();
   await seedDatabase();
   app.listen(PORT, () => {
-    console.log(`CopperMart API → http://localhost:${PORT}`);
+    console.log(`Electric Shop API → http://localhost:${PORT}`);
     console.log(`Health check  → http://localhost:${PORT}/api/health`);
     console.log(`Admin login   → admin@coppermart.app / admin123`);
   });

@@ -4,7 +4,7 @@ const settingsSchema = new mongoose.Schema(
   {
     key: { type: String, unique: true, default: 'main' },
     business: {
-      name: { type: String, default: 'CopperMart Trading' },
+      name: { type: String, default: 'Electric Shop Trading' },
       phone: { type: String, default: '' },
       email: { type: String, default: '' },
       address: { type: String, default: '' },

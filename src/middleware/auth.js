@@ -11,7 +11,7 @@ export const protect = async (req, res, next) => {
 
     // Dev demo token from frontend when API was offline
     if (token === 'demo-token' && process.env.NODE_ENV !== 'production') {
-      req.user = { _id: 'demo', name: 'Demo Admin', email: 'demo@coppermart.app', role: 'Admin' };
+      req.user = { _id: 'demo', name: 'Demo Admin', email: 'demo@Electric Shop.app', role: 'Admin' };
       return next();
     }
 

@@ -1,4 +1,4 @@
-# CopperMart Backend (Part 2)
+# Electric Shop Backend (Part 2)
 
 Node.js + Express + Mongoose REST API for the copper/scrap trading POS.
 
@@ -12,7 +12,7 @@ npm install
 Copy `.env.example` → `.env` and set your **MongoDB Atlas** URI:
 
 ```
-MONGODB_URI=mongodb+srv://USER:PASSWORD@cluster0.xxxxx.mongodb.net/coppermart?retryWrites=true&w=majority
+MONGODB_URI=mongodb+srv://USER:PASSWORD@cluster0.xxxxx.mongodb.net/Electric Shop?retryWrites=true&w=majority
 ```
 
 If Atlas/local Mongo is unreachable and `ALLOW_MEMORY_DB=true`, the server falls back to an in-memory MongoDB (dev only; data resets on restart).
@@ -30,7 +30,7 @@ Health: `http://localhost:5000/api/health`
 
 ### Default admin (seeded)
 
-- Email: `admin@coppermart.app`
+- Email: `admin@Electric Shop.app`
 - Password: `admin123`
 
 ## Structure
