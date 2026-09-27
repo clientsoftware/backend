@@ -15,22 +15,14 @@ import reportRoutes from './report.routes.js';
 import notificationRoutes from './notification.routes.js';
 import dashboardRoutes from './dashboard.routes.js';
 import settingsRoutes from './settings.routes.js';
+import employeeRoutes from './employee.routes.js';
+import attendanceRoutes from './attendance.routes.js';
+import productionRoutes from './production.routes.js';
+import payrollRoutes from './payroll.routes.js';
+import bankAccountRoutes from './bankAccount.routes.js';
+import cashTxnRoutes from './cashTxn.routes.js';
+import partyTransferRoutes from './partyTransfer.routes.js';
 
-/**
- * API route map (Part 2) + frontend aliases
- *
- * POST   /api/auth/login
- * GET    /api/products
- * POST   /api/sales
- * POST   /api/scrap-sales
- * POST   /api/exchange
- * PUT    /api/rates
- * POST   /api/dispatch
- * POST   /api/payments
- * POST   /api/returns
- * GET    /api/reports/:type
- * GET    /api/notifications/pending-payments
- */
 const router = Router();
 
 router.use('/auth', authRoutes);
@@ -43,7 +35,7 @@ router.use('/products', productRoutes);
 router.use('/customers', customerRoutes);
 router.use('/sales', saleRoutes);
 
-// Part 2 canonical + frontend aliases
+// Canonical + frontend aliases
 router.use('/scrap-sales', scrapSaleRoutes);
 router.use('/scrap/sales', scrapSaleRoutes);
 
@@ -60,5 +52,14 @@ router.use('/returns', returnRoutes);
 router.use('/reports', reportRoutes);
 router.use('/notifications', notificationRoutes);
 router.use('/settings', settingsRoutes);
+
+// New HR & Business Ledger routes
+router.use('/employees', employeeRoutes);
+router.use('/attendance', attendanceRoutes);
+router.use('/production', productionRoutes);
+router.use('/payroll', payrollRoutes);
+router.use('/bank-accounts', bankAccountRoutes);
+router.use('/cash-txns', cashTxnRoutes);
+router.use('/party-transfers', partyTransferRoutes);
 
 export default router;
